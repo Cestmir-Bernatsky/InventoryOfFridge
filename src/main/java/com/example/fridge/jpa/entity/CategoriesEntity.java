@@ -12,17 +12,17 @@ public class CategoriesEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column (name = "id_category")
-    private Integer id_category;
+    @Column (name = "idcategory")
+    private Integer idcategory;
     @Column(name = "category")
     private String category;
 
-    public Integer getId_category() {
-        return id_category;
+    public Integer getIdcategory() {
+        return idcategory;
     }
 
-    public void setId_category(Integer id_category) {
-        this.id_category = id_category;
+    public void setIdcategory(Integer idcategory) {
+        this.idcategory = idcategory;
     }
 
     public String getCategory() {

@@ -8,19 +8,19 @@ public class ManufacturersEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column (name = "id_manufacturer")
-    private Integer id_manufacturer;
+    @Column (name = "idmanufacturer")
+    private Integer idmanufacturer;
     @Column(name = "manufacturer")
     private String manufacturer;
     @Column(name = "country")
     private String country;
 
-    public Integer getId_manufacturer() {
-        return id_manufacturer;
+    public Integer getIdmanufacturer() {
+        return idmanufacturer;
     }
 
-    public void setId_manufacturer(Integer id_manufacturer) {
-        this.id_manufacturer = id_manufacturer;
+    public void setIdmanufacturer(Integer idmanufacturer) {
+        this.idmanufacturer = idmanufacturer;
     }
 
     public String getManufacturer() {
