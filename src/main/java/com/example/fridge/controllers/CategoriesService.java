@@ -30,7 +30,7 @@ public class CategoriesService {
 //        return fridgeRepository.findAllByCategory(category);
 //    }
 
-    public void addItem(CategoriesEntity fridgeEntity){
-        fridgeRepository.save(fridgeEntity);
+    public void addItem(CategoriesEntity categoryEntity){
+        fridgeRepository.save(categoryEntity);
     }
 }
