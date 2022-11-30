@@ -1,26 +1,34 @@
 package com.example.fridge.jpa.entity;
 
-
 import jakarta.persistence.*;
+import jakarta.persistence.criteria.CriteriaBuilder;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
-@Table(name="fridge")
+@Table(name = "fridge")
 public class FridgeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
+    @Column(name = "id")
     private Integer id;
-    @Column(name = "produkt")
-    private String product;
-    @Column(name = "kategorie")
-    private String category;
-    @Column(name = "kusu")
+
+    @Column(name = "idproduct")
+    private Integer idproduct;
+
+    @Column(name = "pcs")
     private Integer pcs;
-    @Column(name = "pridano")
-    private LocalDate added = LocalDate.now();
+
+    @Column(name = "added")
+    private LocalDate added;
+
+    @Column(name = "idmanufacturer")
+    private Integer idmanufacturer;
+
+    @Column(name = "expiration")
+    private LocalDate expiration;
 
     public Integer getId() {
         return id;
@@ -30,20 +38,12 @@ public class FridgeEntity {
         this.id = id;
     }
 
-    public String getProduct() {
-        return product;
+    public Integer getIdproduct() {
+        return idproduct;
     }
 
-    public void setProduct(String product) {
-        this.product = product;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
+    public void setIdproduct(Integer idproduct) {
+        this.idproduct = idproduct;
     }
 
     public Integer getPcs() {
@@ -60,5 +60,21 @@ public class FridgeEntity {
 
     public void setAdded(LocalDate added) {
         this.added = added;
+    }
+
+    public Integer getIdmanufacturer() {
+        return idmanufacturer;
+    }
+
+    public void setIdmanufacturer(Integer idmanufacturer) {
+        this.idmanufacturer = idmanufacturer;
+    }
+
+    public LocalDate getExpiration() {
+        return expiration;
+    }
+
+    public void setExpiration(LocalDate expiration) {
+        this.expiration = expiration;
     }
 }
