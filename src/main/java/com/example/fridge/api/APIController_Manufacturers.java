@@ -1,6 +1,7 @@
 package com.example.fridge.api;
 
 import com.example.fridge.controllers.ManufacturersService;
+import com.example.fridge.jpa.entity.CategoriesEntity;
 import com.example.fridge.jpa.entity.ManufacturersEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,5 +26,10 @@ public class APIController_Manufacturers {
     @GetMapping("/manufacturers/{id}")
     public ManufacturersEntity getManufacturerById(@PathVariable("id") Integer id){
         return manufacturersService.getManufacturerById(id);
+    }
+
+    @GetMapping("/productsByMan/{id}")
+    public List<ManufacturersEntity> getProductsByManufacturer(@PathVariable("id") Integer id){
+        return manufacturersService.getProductsByManufacturer(id);
     }
 }

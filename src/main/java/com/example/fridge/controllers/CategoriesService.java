@@ -12,25 +12,23 @@ import java.util.List;
 public class CategoriesService {
 
     @Autowired
-    private CategoriesRepository fridgeRepository;
+    private CategoriesRepository categoriesRepository;
 
     public List<CategoriesEntity> getAll(){
-        return fridgeRepository.findAll();
+        return categoriesRepository.findAll();
     }
 
     public CategoriesEntity getById(Integer id){
-        return fridgeRepository.getReferenceById(id);
+        return categoriesRepository.getReferenceById(id);
     }
 
-//    public List<CategoriesEntity> getAllByKusu(Integer pcs){
-//        return fridgeRepository.findAllByPcs(pcs);
-//    }
 
-//    public List<CategoriesEntity> getAllByCategory(String category){
-//        return fridgeRepository.findAllByCategory(category);
-//    }
+    public List<CategoriesEntity> getProductsByCategory(String category){
+        return categoriesRepository.findByCategory(category);
+    }
+
 
     public void addItem(CategoriesEntity categoryEntity){
-        fridgeRepository.save(categoryEntity);
+        categoriesRepository.save(categoryEntity);
     }
 }

@@ -12,6 +12,10 @@ public class ManufacturersService {
     @Autowired
     private ManufacturersRepository manufacturersRepository;
 
+    public ManufacturersRepository getManufacturersRepository() {
+        return manufacturersRepository;
+    }
+
     public List<ManufacturersEntity> getAllManufacturers (){
         return manufacturersRepository.findAll();
     }
@@ -20,6 +24,8 @@ public class ManufacturersService {
         return manufacturersRepository.getReferenceById(id);
     }
 
-
+    public List<ManufacturersEntity> getProductsByManufacturer(Integer id){
+        return manufacturersRepository.findProductsByIdmanufacturer(id);
+    }
 
 }

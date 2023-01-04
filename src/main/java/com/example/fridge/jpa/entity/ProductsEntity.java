@@ -2,20 +2,26 @@ package com.example.fridge.jpa.entity;
 
 import jakarta.persistence.*;
 
+
 @Entity
 @Table(name = "products")
 public class ProductsEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column (name = "idproduct")
+    @Column (name = "idproduct", insertable = false, updatable = false)
     private Integer idproduct;
 
     @Column(name = "product")
     private String product;
 
-    @Column(name = "idcategory")
-    private Integer idcategory;
+    @ManyToOne
+    @JoinColumn(name = "idcategory", referencedColumnName = "idcategory")
+    private CategoriesEntity categoryfk;
+
+    public CategoriesEntity getCategoryfk() {
+        return categoryfk;
+    }
 
     public Integer getIdproduct() {
         return idproduct;
@@ -33,11 +39,4 @@ public class ProductsEntity {
         this.product = product;
     }
 
-    public Integer getIdcategory() {
-        return idcategory;
-    }
-
-    public void setIdcategory(Integer idcategory) {
-        this.idcategory = idcategory;
-    }
 }

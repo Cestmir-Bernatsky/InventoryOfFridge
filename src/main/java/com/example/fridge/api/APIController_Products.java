@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -26,6 +27,11 @@ public class APIController_Products {
     @GetMapping("/products/{id}")
     public ProductsEntity getProductById(@PathVariable("id") Integer id){
         return productsService.getProductById(id);
-
     }
+
+    @GetMapping("/products/category/{cat}")
+    public List<ProductsEntity> getProductById(@PathVariable("cat") String cat){
+        return productsService.getByCat(cat);
+    }
+
 }

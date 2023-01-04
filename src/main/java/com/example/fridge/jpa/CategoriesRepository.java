@@ -9,10 +9,7 @@ import java.util.List;
 @Repository
 public interface CategoriesRepository extends JpaRepository<CategoriesEntity, Integer> {
 
-    //public List<CategoriesEntity> findAllByPcs(Integer pcs);
+    public List<CategoriesEntity> findByCategory(String category);
 
-    //public List<CategoriesEntity> findAllByCategory(String category);
-
-    //public List<FridgeEntity>
 
 }

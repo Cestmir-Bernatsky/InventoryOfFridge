@@ -2,6 +2,7 @@ package com.example.fridge.jpa.entity;
 
 import jakarta.persistence.*;
 
+
 @Entity
 @Table(name = "manufacturers")
 public class ManufacturersEntity {
